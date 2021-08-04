@@ -63,7 +63,7 @@ export default {
       this.operatorClicked = true;
     },
     divide() {
-      this.operator = (a , b) => a / b;
+      this.operator = (a , b) => b / a;
       this.setPrevious();
     },
     times(){
@@ -80,13 +80,11 @@ export default {
        this.operator = (a , b) => { 
          console.log(a,b)
          return a + b};
+         console.log(this.operator)
        this.setPrevious();
     },
     equal(){
-      this.current = `${this.operator(
-        parseFloat(this.current),
-         parseFloat(this.previous)
-         )}`;
+      this.current = `${this.operator( parseFloat(this.current),parseFloat(this.previous) )}`;
          this.previous = null;
     }
   },
@@ -120,3 +118,4 @@ export default {
   color: white;
 }
 </style>
+
